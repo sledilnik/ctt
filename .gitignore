@@ -17,3 +17,6 @@ page/json_hourly
 page/plaintext
 page/users
 page/users_hourly
+
+# Local Netlify folder
+.netlify
