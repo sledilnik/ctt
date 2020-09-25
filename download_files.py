@@ -1,11 +1,11 @@
 from pathlib import Path
 import requests
 
-# https://svc90.main.px.t-online.de/version/v1/diagnosis-keys/country/DE/date
+# https://svc90.cwa.gov.si/version/v1/diagnosis-keys/country/SI/date
 protocol = "https://"
-host = "svc90.main.px.t-online.de"
+host = "svc90.cwa.gov.si"
 version = "v1"
-country = "DE"
+country = "SI"
 
 dates_url = f"{protocol}{host}/version/{version}/diagnosis-keys/country/{country}/date"
 available_dates = set(requests.get(dates_url).json())
