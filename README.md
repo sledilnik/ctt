@@ -1,10 +1,10 @@
-# [Corona Tracker Tracker](https://ctt.pfstr.de)
-Tracks the daily published Diagnosis-Keys from the German Corona-Tracing-app.
+# [Corona Tracker Tracker for #OstaniZdrav](https://ctt-si.netlify.app)
+Tracks the daily published Diagnosis-Keys from the Slovenian #OstaniZdrav fork of German Corona-Tracing-app.
 
-**Available under: [ctt.pfstr.de](https://ctt.pfstr.de)**
+**Available under: [ctt-si.netlify.app](https://ctt-si.netlify.app)**
 
-`export.bin` file hash mapping: [ctt.pfstr.de/json/filehashes.json](https://ctt.pfstr.de/json/filehashes.json)
+`export.bin` file hash mapping: [ctt-si.netlify.app/json/filehashes.json](https://ctt-si.netlify.app/json/filehashes.json)
 
 screenshot:
 
-![screenshot](https://ctt.pfstr.de/Screenshot.png)
+![screenshot](https://ctt-si.netlify.app/Screenshot.png)

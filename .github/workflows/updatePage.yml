@@ -3,9 +3,9 @@ name: update page
 on:
   push:
     branches:
-      - master
+      - slovenia-with-data
   schedule:
-    - cron: "1 0 * * *"
+    - cron: "2 */1 * * *"
 
 jobs:
   update_page:
@@ -92,7 +92,7 @@ jobs:
       - name: take screenshot
         uses: flameddd/screenshots-ci-action@v1.1.0
         with:
-          url: "https://ctt.pfstr.de/"
+          url: "https://ctt-si.netlify.app/"
           type: "png"
 
       - name: copy screenshot
