@@ -8,3 +8,6 @@ Tracks the daily published Diagnosis-Keys from the Slovenian #OstaniZdrav fork o
 screenshot:
 
 ![screenshot](https://ctt-si.netlify.app/Screenshot.png)
+
+----
+Project forked from [github.com/janpf/ctt](https://github.com/janpf/ctt)
