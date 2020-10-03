@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "number of keys valid per day by risk level (interactive)",
+  "title": "število ključev veljavnih na dan po stopnjah tveganja (interaktivno)",
   "width": 700,
   "height": 250,
   "data": {
@@ -8,7 +8,7 @@
   },
   "transform": [
     {
-      "calculate": "datum.valid + ' keys with risk lvl ' + datum.risk",
+      "calculate": "datum.valid + ' veljavnih ključev s stopnjo tveganja ' + datum.risk",
       "as": "tt"
     }
   ],
@@ -16,6 +16,7 @@
     {
       "encoding": {
         "x": {
+          "title": "datum",
           "timeUnit": "utcmonthdate",
           "field": "date",
           "type": "temporal",
@@ -57,10 +58,11 @@
           "field": "valid",
           "type": "quantitative",
           "axis": {
-            "title": "number of keys valid on given day"
+            "title": "veljavnih ključev na dan"
           }
         },
         "color": {
+          "title": "tveganje",
           "field": "risk",
           "type": "ordinal"
         }

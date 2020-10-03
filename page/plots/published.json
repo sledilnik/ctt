@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "title": "number of keys published per day",
+    "title": "število ključev objavljenih na posamezen dan",
     "width": 700,
     "height": 250,
     "data": {
@@ -21,6 +21,7 @@
         {
             "encoding": {
                 "x": {
+                    "title": "datum",
                     "timeUnit": "utcmonthdate",
                     "field": "date",
                     "type": "temporal",
@@ -62,7 +63,7 @@
                     "field": "published",
                     "type": "quantitative",
                     "axis": {
-                        "title": "published keys per day",
+                        "title": "objavljenih ključev na dan",
                         "titleColor": "steelblue"
                     }
                 },
@@ -100,7 +101,7 @@
                     "field": "sum_published",
                     "type": "quantitative",
                     "axis": {
-                        "title": "running total of keys published",
+                        "title": "objavljenih ključev skupaj",
                         "titleColor": "#b4464b"
                     }
                 },

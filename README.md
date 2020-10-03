@@ -1,4 +1,5 @@
-# [Corona Tracker Tracker for #OstaniZdrav](https://ctt-si.netlify.app)
+# [#OstaniZdrav Tracker](https://ctt-si.netlify.app)
+
 Tracks the daily published Diagnosis-Keys from the Slovenian #OstaniZdrav fork of German Corona-Tracing-app.
 
 **Available under: [ctt-si.netlify.app](https://ctt-si.netlify.app)**

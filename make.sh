@@ -12,3 +12,4 @@ python generate_html.py
 python generate_filehashes.py
 #bash cleanup_before_publication.sh
 #netlify deploy --dir=page --prod
+#http-server page/

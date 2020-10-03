@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "title": "number of keys valid per day",
+    "title": "število ključev veljavnih na posamezen dan",
     "width": 700,
     "height": 250,
     "data": {
@@ -17,6 +17,7 @@
             "field": "date",
             "type": "temporal",
             "axis": {
+                "title": "datum",
                 "labelAngle": 0,
                 "tickCount": "week",
                 "labelExpr": "[timeFormat(datum.value, '%d'), timeFormat(datum.value, '%d') <= '07' ? timeFormat(datum.value, '%b') : '']",
@@ -54,7 +55,7 @@
             "field": "valid",
             "type": "quantitative",
             "axis": {
-                "title": "keys valid per day"
+                "title": "veljavnih ključev na dan"
             }
         }
     }

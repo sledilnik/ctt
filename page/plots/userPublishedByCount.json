@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "number of keys published per user per day (interactive)",
+  "title": "število ključev objavljenih na uporabnika na dan (interaktivno)",
   "width": 700,
   "height": 250,
   "data": {
@@ -8,7 +8,7 @@
   },
   "transform": [
     {
-      "calculate": "datum.user_count + ' users uploaded ' + datum.key_count + ' keys'",
+      "calculate": "datum.user_count + ' uporabnikov je objavilo ' + datum.key_count + ' ključev'",
       "as": "tt"
     }
   ],
@@ -16,6 +16,7 @@
     {
       "encoding": {
         "x": {
+          "title": "datum",
           "timeUnit": "utcmonthdate",
           "field": "date",
           "type": "temporal",
@@ -63,10 +64,11 @@
             ]
           },
           "axis": {
-            "title": "(average) key count per user on given day"
+            "title": "(povprečno) število ključev na uporabnika na dan"
           }
         },
         "color": {
+          "title": "uporabnikov",
           "field": "user_count",
           "type": "quantitative"
         }
