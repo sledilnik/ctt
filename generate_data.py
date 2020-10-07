@@ -26,7 +26,7 @@ for f in sorted(Path("page/users_hourly").iterdir()):
     for line in lines:
         if "called with" in line:
             multiplierForPacket = int(line.split(":")[1].split(",")[0].split("=")[1])
-            break
+            # break
         if "Padding" in line:
             multiplierForPacket = int(line.split(":")[-1])
         if "not padded" in line:
