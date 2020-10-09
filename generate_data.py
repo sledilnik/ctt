@@ -55,8 +55,9 @@ for f in sorted(Path("page/json_hourly").iterdir()):
     if f.name == ".gitkeep":
         continue
     if "-3." in f.name and datetime.datetime.fromisoformat(f.stem[: f.stem.rfind("-")]) >= datetime.datetime.fromisoformat("2020-09-25"):
-        print("skipping", f.name)
-        continue
+        pass
+        # print("skipping", f.name)
+        # continue
     print(f)
     jf = json.loads(f.read_text())
     for dk in jf["diagnosisKeys"]:
