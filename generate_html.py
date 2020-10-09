@@ -14,3 +14,10 @@ with open("page/template.html") as f:
 
 with open("page/index.html", "w") as f:
     f.write(template.render(dates=available_dates, now=now))
+
+# embed
+with open("page/embed-template.html") as f:
+    template = Template(f.read())
+
+with open("page/embed.html", "w") as f:
+    f.write(template.render(now=now))

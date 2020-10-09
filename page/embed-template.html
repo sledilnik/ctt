@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <title>#OstaniZdrav Sledilnik</title>
+    <meta name="description" content="Sledenje podatkom in metrike aplikacije #OstaniZdrav">
+    <link rel="stylesheet" href="embed.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <link rel="canonical" href="https://covid-19.sledilnik.org/sl/ostanizdrav" />
+</head>
+
+<body>
+    <div>
+        Posodobljeno: {{ now }}
+    </div>
+
+    <h1>#OstaniZdrav</h1>
+
+    <div>
+        Vir podatkov: aplikacija <a href="https://www.gov.si/ostanizdrav" target="_blank">#OstaniZdrav</a> 
+            (upravljata jo <a href="https://www.nijz.si/" target="_blank">NIJZ</a> 
+            in <a href="https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-javno-upravo/" target="_blank">MJU</a>)
+        <br>
+        Zahvala <a href="https://github.com/mh-" target="_blank">Michael Huebler</a> za <a
+            href="https://github.com/mh-/diagnosis-keys" target="_blank">paket orodij za analizo ključev</a>
+        <br>
+        in <a href="https://github.com/janpf" target="_blank">Jan Pfister</a> 
+            za <a href="https://github.com/janpf/ctt" target="_blank">to stran za analizo nemške Corona Warn aplikacije</a>
+        <br>
+        Izvorna koda na <a href="https://github.com/sledilnik/ctt" target="_blank">GitHub-u</a>
+    </div>
+
+    <div id="valid-chart">
+        <h2>
+            <a href="#valid-chart">Število ključev veljavnih na posamezen dan</a>
+        </h2>
+        <div id="validVis"></div>
+        <div>
+            ↑ Kaj so <a href="https://github.com/janpf/ctt/issues/1" target="_blank">
+                veljavni ključi?
+            </a>
+            <br>
+            padding
+            <a href="https://github.com/mh-/diagnosis-keys/blob/master/lib/count_users.py#L107" target="_blank">
+                detected
+            </a>
+            and removed
+        </div>
+    </div>
+
+    <div id="published-chart">
+        <h2>
+            <a href="#published-chart">Število ključev objavljenih na posamezen dan</a>
+        </h2>
+        <div id="publishedVis"></div>
+        <div>
+            ↑ padding
+            <a href="https://github.com/mh-/diagnosis-keys/blob/master/lib/count_users.py#L107" target="_blank">
+                detected
+            </a>
+            and removed
+        </div>
+    </div>
+
+    <div id="valid-by-risk-chart">
+        <h2>
+            <a href="#valid-by-risk-chart">Število ključev veljavnih na dan po stopnjah tveganja</a>
+        </h2>
+        <div id="validByRiskVis"></div>
+        <div>
+            ↑ število ključev veljavnih na dan po stopnjah tveganja
+            <br>
+            Kaj so <a href="https://github.com/janpf/ctt/issues/1" target="_blank">
+                veljavni ključi?
+            </a>
+            <br>
+            zapeljite kazalec miške na graf za več informacij
+            <br>
+            padding
+            <a href="https://github.com/mh-/diagnosis-keys/blob/master/lib/count_users.py#L107" target="_blank">
+                detected
+            </a>
+            and removed
+        </div>
+    </div>
+
+    <div id="published-by-risk-chart">
+        <h2>
+            <a href="#published-by-risk-chart">Število ključev objavljenih na dan po stopnjah tveganja</a>
+        </h2>
+        <div id="publishedByRiskVis"></div>
+        <div>
+            ↑ število ključev objavljenih na dan po stopnjah tveganja
+            <br>
+            zapeljite kazalec miške na graf za več informacij
+            <br>
+            padding
+            <a href="https://github.com/mh-/diagnosis-keys/blob/master/lib/count_users.py#L107" target="_blank">
+                detected
+            </a>
+            and removed
+        </div>
+    </div>
+
+    <div id="user-count-chart">
+        <h2>
+            <a href="#user-count-chart">Ocena števila uporabnikov, ki so objavili ključe na posamezen dan</a>
+        </h2>
+        <div id="usercountVis"></div>
+        <div>
+            ↑ <a href="https://github.com/mh-/diagnosis-keys/blob/master/doc/algorithm.md#counting-users"
+                target="_blank">
+                ocena
+            </a>
+            dokler ni napaka
+            <a href="https://github.com/corona-warn-app/cwa-documentation/issues/343" target="_blank">
+                #343
+            </a>
+            popravljena
+        </div>
+    </div>
+
+    <div id="user-published-by-count-chart">
+        <h2>
+            <a href="#user-published-by-count-chart">Število ključev objavljenih na uporabnika na posamezen dan</a>
+        </h2>
+        <div id="userPublishedByCountVis"></div>
+        <div>
+            ↑ <a href="https://github.com/mh-/diagnosis-keys/blob/master/doc/algorithm.md#counting-keys-per-user"
+                target="_blank">
+                ocena
+            </a>
+            dokler ni napaka
+            <a href="https://github.com/corona-warn-app/cwa-documentation/issues/343" target="_blank">
+                #343
+            </a>
+            popravljena
+            <br>
+            zapeljite kazalec miške na graf za več informacij
+            <br>
+            padding
+            <a href="https://github.com/mh-/diagnosis-keys/blob/master/lib/count_users.py#L107" target="_blank">
+                detected
+            </a> and removed
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var spec = "./plots/valid.json";
+        vegaEmbed('#validVis', spec, {"actions": false}).then(function (result) {
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "./plots/published.json";
+        vegaEmbed('#publishedVis', spec, {"actions": false}).then(function (result) {
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "./plots/validByRisk.json";
+        vegaEmbed('#validByRiskVis', spec, {"actions": false}).then(function (result) {
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "./plots/publishedByRisk.json";
+        vegaEmbed('#publishedByRiskVis', spec, {"actions": false}).then(function (result) {
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "./plots/usercount.json";
+        vegaEmbed('#usercountVis', spec, {"actions": false}).then(function (result) {
+        }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "./plots/userPublishedByCount.json";
+        vegaEmbed('#userPublishedByCountVis', spec, {"actions": false}).then(function (result) {
+        }).catch(console.error);
+    </script>
+
+</body>
+</html>
