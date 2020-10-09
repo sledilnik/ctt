@@ -97,7 +97,7 @@ jobs:
       - name: take screenshot
         uses: flameddd/screenshots-ci-action@v1.1.0
         with:
-          url: "https://ctt-si.netlify.app/"
+          url: "https://ostanizdrav.sledilnik.org/"
           type: "png"
 
       - name: copy screenshot
