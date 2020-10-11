@@ -36,6 +36,18 @@ jobs:
         working-directory: diagnosis-keys
         run: pip install -r requirements.txt
 
+      - name: checkout sledilnik/cwa-scrape with data for Slovenia
+        uses: actions/checkout@v2
+        with:
+          repository: sledilnik/cwa-scrape
+          path: cwa-scrape
+
+      - name: copy daily exports for Slovenia
+        run: rm main/page/keys/????-??-??.zip && cp cwa-scrape/data/SI/????-??-??.zip main/page/keys
+
+      - name: copy hourly exports for Slovenia
+        run: rm main/page/keys_hourly/????-??-??-*.zip && cp cwa-scrape/data/SI/hourly/????-??-??-*.zip main/page/keys_hourly
+
       - name: download files
         working-directory: main
         run: python download_files.py
