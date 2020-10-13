@@ -2,3 +2,7 @@
 rm -rf page/keys_hourly
 rm -rf page/json_hourly
 rm -rf page/users_hourly
+rm -rf page/keys
+rm -rf page/json
+rm -rf page/users
+rm -rf page/plaintext

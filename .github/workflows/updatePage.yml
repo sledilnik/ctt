@@ -84,31 +84,31 @@ jobs:
         working-directory: main
         run: python generate_data.py
 
-      - name: generate html
-        working-directory: main
-        run: python generate_html.py
+      # - name: generate html
+      #   working-directory: main
+      #   run: python generate_html.py
 
-      - name: generate filehashes
-        working-directory: main
-        run: python generate_filehashes.py
+      # - name: generate filehashes
+      #   working-directory: main
+      #   run: python generate_filehashes.py
 
       - name: cleanup before publication
         working-directory: main
         run: bash cleanup_before_publication.sh
 
-      - name: install puppeteer
-        uses: mujo-code/puppeteer-headful@master
-        env:
-          CI: 'true'
+      # - name: install puppeteer
+      #   uses: mujo-code/puppeteer-headful@master
+      #   env:
+      #     CI: 'true'
 
-      - name: take screenshot
-        uses: flameddd/screenshots-ci-action@v1.1.0
-        with:
-          url: "https://ctt.pfstr.de/"
-          type: "png"
+      # - name: take screenshot
+      #   uses: flameddd/screenshots-ci-action@v1.1.0
+      #   with:
+      #     url: "https://ctt.pfstr.de/"
+      #     type: "png"
 
-      - name: copy screenshot
-        run: cp screenshots/desktopPage1280x720*.png main/page/Screenshot.png
+      # - name: copy screenshot
+      #   run: cp screenshots/desktopPage1280x720*.png main/page/Screenshot.png
 
       - name: publish
         uses: netlify/actions/cli@master
