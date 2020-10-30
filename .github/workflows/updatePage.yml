@@ -84,6 +84,10 @@ jobs:
         working-directory: main
         run: python generate_data.py
 
+      - name: create timestamp
+        working-directory: main
+        run: bash create_timestamp.sh
+
       # - name: generate html
       #   working-directory: main
       #   run: python generate_html.py

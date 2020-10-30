@@ -15,6 +15,7 @@ bash create_plaintext.sh
 bash create_users.sh
 bash create_users_hourly.sh
 python generate_data.py
+bash create_timestamp.sh
 python generate_html.py
 python generate_filehashes.py
 #bash cleanup_before_publication.sh
