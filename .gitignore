@@ -21,3 +21,7 @@ page/users_hourly
 
 # Local Netlify folder
 .netlify
+
+# avoid conflicts with upstream German data
+page/keys
+page/keys_hourly
