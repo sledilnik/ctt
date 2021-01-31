@@ -36,7 +36,7 @@ with open("create_users_hourly.sh", "w") as cb:
         if f.name == ".gitkeep" or f.name == "removed" or f.name == "updated":
             continue
 
-        if datetime.datetime.fromisoformat(f.stem[: f.stem.rfind("-")]) > datetime.datetime.fromisoformat("2021-01-22"):
+        if datetime.datetime.fromisoformat(f.stem[: f.stem.rfind("-")]) > datetime.datetime.fromisoformat("2021-01-21"):
             cb.write(f"echo parsing {f}; python ./create_users.py -m 1 -v v1.5 -d {f} > page/users_hourly/{f.stem}.txt &\n")
 
         elif datetime.datetime.fromisoformat(f.stem[: f.stem.rfind("-")]) > datetime.datetime.fromisoformat("2020-07-02"):
