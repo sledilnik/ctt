@@ -15,8 +15,11 @@
 
     <span class="row">
         <span class="graph">
-            <h1>Corona Tracker Tracker</h1>
-            <div>always up to date:
+            <h1>Corona Tracker Tracker<sup><a href="https://xkcd.com/2382/" target="_blank">Tracker</a></sup></h1>
+            <div>
+                Corona Tracker Tracker Dashboard for the German Corona-Tracing-app
+                <br>
+                always up to date:
                 <a href="https://github.com/janpf/ctt/actions" target="_blank">
                     <img style="vertical-align:middle"
                         src="https://github.com/janpf/ctt/workflows/update%20page/badge.svg">
@@ -48,29 +51,29 @@
             <div class="graph-annotation">
                 ↑ <a href="https://github.com/mh-/diagnosis-keys/blob/master/doc/algorithm.md#counting-users"
                     target="_blank">
-                    close estimate
+                    estimation prior to v1.5
                 </a>
-                until
-                <a href="https://github.com/corona-warn-app/cwa-documentation/issues/343" target="_blank">
-                    #343
+                and
+                <a href="https://github.com/mh-/diagnosis-keys/issues/12" target="_blank">
+                    estimation from v1.5 onwards
                 </a>
-                fixed
             </div>
         </span>
         <span class="right graph">
             <div id="userPublishedByCountVis" class="graph-vega"></div>
             <div class="graph-annotation">
-                ↑ <a href="https://github.com/mh-/diagnosis-keys/blob/master/doc/algorithm.md#counting-keys-per-user"
+                ↑ <a href="https://github.com/mh-/diagnosis-keys/blob/master/doc/algorithm.md#counting-users"
                     target="_blank">
-                    close estimate
+                    estimation prior to v1.5
                 </a>
-                until
-                <a href="https://github.com/corona-warn-app/cwa-documentation/issues/343" target="_blank">
-                    #343
-                </a>
-                fixed
                 <br>
                 hover over graph for more information
+                <br>
+                since v1.5
+                <a href="https://github.com/mh-/diagnosis-keys/issues/12" target="_blank">
+                    too unreliable
+                </a>
+                to estimate, so this graph will not be updated for now
             </div>
         </span>
     </span>
@@ -171,4 +174,9 @@
         </tr>
         {% endfor %}
     </table>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "e2aabe3fb115494db376cdd2cddb4bc4"}'>
+        </script>
+    <!-- End Cloudflare Web Analytics -->
 </body>

@@ -1,4 +1,8 @@
 /json/filehashes.json
     Access-Control-Allow-Origin: *
+
+/json_EUR/filehashes.json
+    Access-Control-Allow-Origin: *
+
 /plots/*.json
     Access-Control-Allow-Origin: *

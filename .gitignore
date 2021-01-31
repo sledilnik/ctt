@@ -14,6 +14,7 @@ page/plots/usersByCount.json
 page/plots/timestamp.json
 
 page/json
+page/json_EUR
 page/json_hourly
 page/plaintext
 page/users
