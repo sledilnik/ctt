@@ -49,6 +49,12 @@ jobs:
       - name: copy hourly exports for Slovenia
         run: rm main/page/keys_hourly/????-??-??-*.zip && cp cwa-scrape/data/SI/hourly/????-??-??-*.zip main/page/keys_hourly
 
+      - name: copy daily exports for Slovenia
+        run: rm main/page/keys_EUR/????-??-??.zip && cp cwa-scrape/data/EUR/????-??-??.zip main/page/keys_EUR
+
+      - name: copy hourly exports for Slovenia
+        run: rm main/page/keys_hourly_EUR/????-??-??-*.zip && cp cwa-scrape/data/EUR/hourly/????-??-??-*.zip main/page/keys_hourly_EUR
+
       - name: download files
         working-directory: main
         run: python download_files.py

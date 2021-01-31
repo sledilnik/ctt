@@ -25,4 +25,4 @@ page/users_hourly
 
 # avoid conflicts with upstream German data
 page/keys
-page/keys_hourly
+page/keys*

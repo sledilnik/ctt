@@ -1,6 +1,8 @@
 #!/bin/bash
 rm page/keys_hourly/????-??-??-*.zip && cp ../cwa-scrape/data/SI/hourly/????-??-??-*.zip page/keys_hourly
 rm page/keys/????-??-??.zip && cp ../cwa-scrape/data/SI/????-??-??.zip page/keys
+rm page/keys_hourly_EUR/????-??-??-*.zip && cp ../cwa-scrape/data/EUR/hourly/????-??-??-*.zip page/keys_hourly_EUR
+rm page/keys_EUR/????-??-??.zip && cp ../cwa-scrape/data/EUR/????-??-??.zip page/keys_EUR
 rm -rf page/json/*.json
 rm -rf page/json_hourly/*.json
 rm -rf page/users/*.txt
@@ -19,7 +21,6 @@ bash create_timestamp.sh
 python generate_html.py
 python generate_filehashes.py
 #bash cleanup_before_publication.sh
-git checkout page/keys
-git checkout page/keys_hourly/
+#git checkout page/
 #netlify deploy --dir=page --prod
 #http-server page/
