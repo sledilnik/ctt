@@ -4,7 +4,7 @@ from pathlib import Path
 import requests
 
 parser = argparse.ArgumentParser(description="Exposure Notification Diagnosis Key Parser.", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument("-c", "--country", type=str, default="DE", help="key server country")
+parser.add_argument("-c", "--country", type=str, default="SI", help="key server country")
 args = parser.parse_args()
 
 # https://svc90.cwa.gov.si/version/v1/diagnosis-keys/country/SI/date
